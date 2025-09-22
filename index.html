@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeminiX Solutions - Professional Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --dark: #1f2937;
+            --darker: #111827;
+            --light: #f3f4f6;
+            --lighter: #f9fafb;
+            --gray: #9ca3af;
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --dark: #f3f4f6;
+            --darker: #1f2937;
+            --light: #111827;
+            --lighter: #1f2937;
+            --gray: #6b7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--lighter);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--dark);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(to right, var(--lighter) 60%, var(--primary-dark) 40%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            width: 50%;
+            padding-right: 40px;
+        }
+
+        .hero-heading {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .section-subheading {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--lighter);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-text {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* Projects */
+        .project-slider {
+            position: relative;
+            overflow: hidden;
+            margin: 40px 0;
+        }
+
+        .project-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .project-slide {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .project-desc {
+            color: var(--gray);
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .slider-btn {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Project Categories */
+        .project-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .category-btn {
+            padding: 10px 20px;
+            background-color: var(--lighter);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* About */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            width: 45%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-text {
+            width: 55%;
+        }
+
+        .about-heading {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            background-color: var(--lighter);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 20px;
+        }
+
+        .team-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background-color: var(--lighter);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--gray);
+            border-radius: 8px;
+            background-color: transparent;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-heading {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-link {
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--lighter);
+            width: 90%;
+            max-width: 600px;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            transform: translateY(-50px);
+            transition: var(--transition);
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--primary);
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                width: 100%;
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .hero-heading {
+                font-size: 2.8rem;
+            }
+
+            .hero-image {
+                position: relative;
+                width: 80%;
+                margin: 40px auto 0;
+                transform: none;
+                right: auto;
+                top: auto;
+            }
+
+            .hero {
+                background: var(--lighter);
+                padding: 100px 0 60px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image, .about-text {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background-color: var(--lighter);
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-link {
+                padding: 15px 20px;
+                display: block;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .section-heading {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .slide-in-left.appear {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .slide-in-right.appear {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .zoom-in.appear {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">GeminiX<span>Solutions</span></a>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="services">Services</a></li>
+                <li><a href="#" class="nav-link" data-page="projects">Projects</a></li>
+                <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-heading slide-in-left">Transforming Ideas Into Digital Reality</h1>
+                <p class="hero-text slide-in-left">We provide cutting-edge MERN stack development, data analytics, video editing, graphics design, and data entry services to help your business thrive in the digital world.</p>
+                <button class="btn slide-in-left">Get Started</button>
+            </div>
+            <div class="hero-image zoom-in">
+                <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="GeminiX Solutions">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-heading fade-in">Our Services</h2>
+            <p class="section-subheading fade-in">We offer a wide range of digital services to help your business grow and succeed in the competitive market.</p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in" data-service="mern">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">MERN Stack Development</h3>
+                    <p class="service-text">We build responsive, modern web applications using MongoDB, Express.js, React, and Node.js.</p>
+                    <button class="btn learn-more">Learn More</button>
+                </div>
+                
+                <div class="service-card fade-in" data-service="analytics">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Data Analytics</h3>
+                    <p class="service-text">Transform your data into actionable insights with our advanced analytics solutions.</p>
+                    <button class="btn learn-more">Learn More</button>
+                </div>
+                
+                <div class="service-card fade-in" data-service="video">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="service-title">Video Editing</h3>
+                    <p class="service-text">Professional video editing services to create engaging content for your audience.</p>
+                    <button class="btn learn-more">Learn More</button>
+                </div>
+                
+                <div class="service-card fade-in" data-service="graphics">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="service-title">Graphics Design</h3>
+                    <p class="service-text">Stunning visual designs that capture your brand identity and communicate your message.</p>
+                    <button class="btn learn-more">Learn More</button>
+                </div>
+                
+                <div class="service-card fade-in" data-service="data-entry">
+                    <div class="service-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3 class="service-title">Data Entry</h3>
+                    <p class="service-text">Accurate and efficient data entry services to keep your information organized.</p>
+                    <button class="btn learn-more">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-heading fade-in">Our Projects</h2>
+            <p class="section-subheading fade-in">Take a look at some of our recent work that showcases our skills and expertise.</p>
+            
+            <div class="project-categories fade-in">
+                <button class="category-btn active" data-category="all">All Projects</button>
+                <button class="category-btn" data-category="mern">MERN Stack</button>
+                <button class="category-btn" data-category="analytics">Data Analytics</button>
+                <button class="category-btn" data-category="video">Video Editing</button>
+                <button class="category-btn" data-category="graphics">Graphics Design</button>
+                <button class="category-btn" data-category="data-entry">Data Entry</button>
+            </div>
+            
+            <div class="project-slider">
+                <div class="project-slides">
+                    <!-- MERN Stack Project 1 -->
+                    <div class="project-slide" data-category="mern">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="E-commerce Website" class="project-image">
+                        <h3 class="project-title">E-commerce Website</h3>
+                        <p class="project-desc">A full-featured online store built with MERN stack with payment integration and admin dashboard.</p>
+                    </div>
+                    
+                    <!-- MERN Stack Project 2 -->
+                    <div class="project-slide" data-category="mern">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Social Media App" class="project-image">
+                        <h3 class="project-title">Social Media Platform</h3>
+                        <p class="project-desc">A social networking application with real-time updates, chat functionality, and content sharing.</p>
+                    </div>
+                    
+                    <!-- Data Analytics Project 1 -->
+                    <div class="project-slide" data-category="analytics">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Data Visualization Dashboard" class="project-image">
+                        <h3 class="project-title">Data Visualization Dashboard</h3>
+                        <p class="project-desc">Interactive dashboard for real-time data analysis and business intelligence.</p>
+                    </div>
+                    
+                    <!-- Data Analytics Project 2 -->
+                    <div class="project-slide" data-category="analytics">
+                        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Sales Analysis" class="project-image">
+                        <h3 class="project-title">Sales Analysis System</h3>
+                        <p class="project-desc">Comprehensive sales data analysis with predictive analytics and reporting features.</p>
+                    </div>
+                    
+                    <!-- Video Editing Project 1 -->
+                    <div class="project-slide" data-category="video">
+                        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Marketing Video" class="project-image">
+                        <h3 class="project-title">Product Marketing Video</h3>
+                        <p class="project-desc">A promotional video for a tech startup showcasing their product features.</p>
+                    </div>
+                    
+                    <!-- Video Editing Project 2 -->
+                    <div class="project-slide" data-category="video">
+                        <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Corporate Video" class="project-image">
+                        <h3 class="project-title">Corporate Presentation</h3>
+                        <p class="project-desc">A professional corporate video with motion graphics and animated elements.</p>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <div class="slider-btn prev">
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                    <div class="slider-btn next">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-heading fade-in">About Us</h2>
+            <p class="section-subheading fade-in">Learn more about our company and what drives us to deliver exceptional results.</p>
+            
+            <div class="about-content">
+                <div class="about-image slide-in-left">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Our Team">
+                </div>
+                <div class="about-text slide-in-right">
+                    <h3 class="about-heading">We Are GeminiX Solutions</h3>
+                    <p>At GeminiX Solutions, we are passionate about helping businesses succeed in the digital landscape. Our team of experts specializes in MERN stack development, data analytics, video editing, graphics design, and data entry services.</p>
+                    <p>With years of experience and a commitment to excellence, we deliver solutions that not only meet but exceed our clients' expectations. We believe in building long-term relationships with our clients by providing exceptional service and support.</p>
+                    <p>Our mission is to empower businesses with innovative digital solutions that drive growth and success. Whether you're a startup or an established enterprise, we have the expertise to help you achieve your goals.</p>
+                    <button class="btn">Read More</button>
+                </div>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Team Member" class="team-img">
+                    <div class="team-info">
+                        <h3 class="team-name">John Anderson</h3>
+                        <p class="team-role">CEO & Founder</p>
+                        <p>Leading the vision and strategy of GeminiX Solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member fade-in">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Team Member" class="team-img">
+                    <div class="team-info">
+                        <h3 class="team-name">Sarah Johnson</h3>
+                        <p class="team-role">Lead Developer</p>
+                        <p>Expert in MERN stack and full-stack development.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member fade-in">
+                    <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db1604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Team Member" class="team-img">
+                    <div class="team-info">
+                        <h3 class="team-name">Michael Chen</h3>
+                        <p class="team-role">Data Analyst</p>
+                        <p>Transforming data into actionable business insights.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member fade-in">
+                    <img src="https://images.unsplash.com/photo-1614289371518-722f2615943d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Team Member" class="team-img">
+                    <div class="team-info">
+                        <h3 class="team-name">Emily Rodriguez</h3>
+                        <p class="team-role">Creative Director</p>
+                        <p>Leading our video editing and graphics design teams.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-heading fade-in">Contact Us</h2>
+            <p class="section-subheading fade-in">Get in touch with us to discuss your project and how we can help you achieve your goals.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>123 Tech Park, Innovation Road, City</p>
+                        </div>
+                    </div>
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (123) 456-7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@geminixsolutions.com</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-input" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-heading">GeminiX Solutions</h3>
+                    <p>Transforming ideas into digital reality with cutting-edge solutions and services.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">MERN Stack Development</a></li>
+                        <li><a href="#" class="footer-link">Data Analytics</a></li>
+                        <li><a href="#" class="footer-link">Video Editing</a></li>
+                        <li><a href="#" class="footer-link">Graphics Design</a></li>
+                        <li><a href="#" class="footer-link">Data Entry</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Home</a></li>
+                        <li><a href="#" class="footer-link">Services</a></li>
+                        <li><a href="#" class="footer-link">Projects</a></li>
+                        <li><a href="#" class="footer-link">About</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 GeminiX Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Service Modals -->
+    <div class="modal" id="mern-modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">MERN Stack Development</h2>
+            <p>Our MERN stack development service includes building modern, responsive web applications using MongoDB, Express.js, React, and Node.js. We create scalable solutions that meet your business needs.</p>
+            <h3>What we offer:</h3>
+            <ul>
+                <li>Custom web application development</li>
+                <li>RESTful API development</li>
+                <li>Real-time applications with WebSockets</li>
+                <li>Database design and optimization</li>
+                <li>Third-party API integrations</li>
+                <li>Maintenance and support</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="analytics-modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">Data Analytics</h2>
+            <p>Our data analytics services help you make sense of your data and turn it into actionable insights. We use advanced tools and techniques to analyze your data and provide valuable recommendations.</p>
+            <h3>What we offer:</h3>
+            <ul>
+                <li>Data visualization and dashboard creation</li>
+                <li>Predictive analytics</li>
+                <li>Business intelligence solutions</li>
+                <li>Data mining and pattern recognition</li>
+                <li>Custom reporting solutions</li>
+                <li>Performance tracking and analysis</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="video-modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">Video Editing</h2>
+            <p>Our video editing services help you create engaging and professional videos that captivate your audience. We work with various types of video content to deliver high-quality results.</p>
+            <h3>What we offer:</h3>
+            <ul>
+                <li>Professional video editing and post-production</li>
+                <li>Motion graphics and animation</li>
+                <li>Color correction and grading</li>
+                <li>Audio enhancement and sound design</li>
+                <li>Video optimization for different platforms</li>
+                <li>Scriptwriting and storyboarding</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="graphics-modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">Graphics Design</h2>
+            <p>Our graphics design services help you create visually appealing designs that communicate your brand message effectively. We create designs that stand out and make an impact.</p>
+            <h3>What we offer:</h3>
+            <ul>
+                <li>Logo design and brand identity</li>
+                <li>Marketing materials (brochures, flyers, banners)</li>
+                <li>Social media graphics and templates</li>
+                <li>UI/UX design for websites and applications</li>
+                <li>Illustrations and infographics</li>
+                <li>Packaging design</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="data-entry-modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">Data Entry</h2>
+            <p>Our data entry services help you manage and organize your data efficiently. We ensure accuracy and timely delivery of all data entry projects.</p>
+            <h3>What we offer:</h3>
+            <ul>
+                <li>Data collection and compilation</li>
+                <li>Data cleaning and validation</li>
+                <li>Database management and maintenance</li>
+                <li>Data conversion and migration</li>
+                <li>Image to text conversion</li>
+                <li>Form processing and survey data entry</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+
+        // Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.getAttribute('data-page');
+                document.querySelector(`#${page}`).scrollIntoView({ behavior: 'smooth' });
+                
+                // Update active class
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                link.classList.add('active');
+                
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Project Slider
+        const projectSlides = document.querySelector('.project-slides');
+        const slides = document.querySelectorAll('.project-slide');
+        const prevBtn = document.querySelector('.slider-btn.prev');
+        const nextBtn = document.querySelector('.slider-btn.next');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        let currentSlide = 0;
+        
+        function updateSlider() {
+            projectSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+        });
+
+        // Project Category Filter
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.getAttribute('data-category');
+                
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter slides
+                if (category === 'all') {
+                    slides.forEach(slide => slide.style.display = 'flex');
+                } else {
+                    slides.forEach(slide => {
+                        if (slide.getAttribute('data-category') === category) {
+                            slide.style.display = 'flex';
+                        } else {
+                            slide.style.display = 'none';
+                        }
+                    });
+                }
+                
+                // Reset to first slide
+                currentSlide = 0;
+                updateSlider();
+            });
+        });
+
+        // Service Modals
+        const learnMoreBtns = document.querySelectorAll('.learn-more');
+        const modals = document.querySelectorAll('.modal');
+        const closeBtns = document.querySelectorAll('.modal-close');
+        
+        learnMoreBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const service = btn.parentElement.getAttribute('data-service');
+                const modal = document.getElementById(`${service}-modal`);
+                modal.classList.add('active');
+            });
+        });
+        
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modal = btn.closest('.modal');
+                modal.classList.remove('active');
+            });
+        });
+        
+        // Close modal when clicking outside
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in');
+        
+        const elementInView = (el, scrollOffset = 0) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= 
+                ((window.innerHeight || document.documentElement.clientHeight) - scrollOffset)
+            );
+        };
+        
+        const displayScrollElement = (element) => {
+            element.classList.add('appear');
+        };
+        
+        const hideScrollElement = (element) => {
+            element.classList.remove('appear');
+        };
+        
+        const handleScrollAnimation = () => {
+            fadeElements.forEach((el) => {
+                if (elementInView(el, 100)) {
+                    displayScrollElement(el);
+                } else {
+                    hideScrollElement(el);
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', () => {
+            handleScrollAnimation();
+        });
+        
+        // Initial check on page load
+        handleScrollAnimation();
+    </script>
+</body>
+</html>
